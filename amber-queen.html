@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amber Queen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Amber Queen</h1>
+        <div class="bee-icon"></div>
+        <p>Her coronation coming soon</p>
+        <form class="quick-subscribe-form" action="https://example.com/subscribe" method="POST">
+            <input type="email" id="quick-email" name="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>       
+
+    <section class="introduction">
+        <blockquote class="intro-quote">
+            “It is better to dance in freedom than march for war.”
+        </blockquote>
+        <div class="intro-text">
+            <p>
+                <strong>Amber Queen</strong> is a captivating novel by Vytas Aukštuolis that interweaves Baltic mythology with contemporary themes, offering profound insights into today’s uncertain world. 
+                Set against a rich tapestry of ancient legends and timeless wisdom, the story delves into themes of power rooted in harmony with each other and the natural world, contrasting it with power derived from violence and domination. 
+            </p>
+            <p>
+                Through vivid storytelling and deeply relatable characters, <strong>Amber Queen</strong> bridges the gap between myth and modernity, inviting readers on a journey of discovery, reflection, and hope.
+            </p>
+        </div>
+    </section> 
+    
+    <!-- Posts Section -->
+    <section class="posts">
+        <div class="post">
+            <img src="images/prologue-placeholder.webp" alt="Prologue" class="post-image" />
+            <h3>Prologue</h3>
+            <p>Preview: February 16, 2025</p>
+        </div>
+        <div class="post">
+            <img src="images/chapter1-placeholder.webp" alt="Chapter I" class="post-image" />
+            <h3>Chapter I</h3>
+            <p>Preview: March 1, 2025</p>
+        </div>
+        <div class="post">
+            <img src="images/chapter2-placeholder.webp" alt="Chapter II" class="post-image" />
+            <h3>Chapter II</h3>
+            <p>Preview: March 11, 2025</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        </blockquote>
+        <div class="contact-text">
+            <p>If you are interested in working with Vytas as an agent, editor, or publisher, please fill out the form below.</p>
+        </div>
+        <form class="contact-form" action="https://example.com/contact" method="POST">
+            <label for="name" class="visually-hidden">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+        
+            <label for="email" class="visually-hidden">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required />
+        
+            <label for="message" class="visually-hidden">Your Message:</label>
+            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+        
+            <button type="submit">Submit</button>
+        </form>        
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        window.addEventListener('load', () => {
+            // Select all elements with the "hidden" class
+            const hiddenElements = document.querySelectorAll('.hidden');
+
+            // Remove the "hidden" class with a delay for each element
+            hiddenElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.remove('hidden');
+                }, index * 500); // 500ms delay between elements
+            });
+        });
+    </script>
+</body>
+</html>

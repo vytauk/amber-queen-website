@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Dancing+Script:wght@700&display=swap');
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Utility Classes */
+.hidden {
+    opacity: 0; /* Completely hidden */
+    pointer-events: none; /* Prevent interaction */
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    background: url('images/Amber\ Queen\ Sea.webp') center/cover no-repeat;
+    background-attachment: fixed; /* Parallax effect */
+    color: #f4f4f2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for readability */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Hero Elements */
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif; /* Elegant serif font */
+    font-size: 4rem;
+    margin-bottom: 10px;
+    color: #f7ecd4;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Shadow to make it pop */
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s; /* Title appears first */
+}
+
+.bee-icon {
+    width: 150px;
+    height: 150px;
+    background: url('images/Amber-Bee-picture.webp') center/cover no-repeat;
+    border-radius: 50%; /* Makes it circular */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin: 20px auto;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1s; /* Bee icon appears second */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #dfe7dc;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.5s; /* Subtitle appears third */
+}
+
+/* Quick Subscribe Form */
+.quick-subscribe-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between input and button */
+    margin-top: 20px;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2s; /* Subscribe form appears last */
+}
+
+.quick-subscribe-form input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quick-subscribe-form button {
+    background-color: #d9a760;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.quick-subscribe-form button:hover {
+    background-color: #b68650; /* Darker gold */
+    transform: scale(1.05); /* Subtle zoom effect */
+}
+
+/* Keyframes for Fade-In Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Slight upward movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section Fade-In Animation */
+.hero h1,
+.hero .bee-icon,
+.hero p,
+.hero .subscribe-form {
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s ease forwards; /* Apply fade-in animation */
+}
+
+/* Animation Delays for Sequential Appearance */
+.hero h1 {
+    animation-delay: 0.5s;
+}
+
+.hero .bee-icon {
+    animation-delay: 1s;
+}
+
+.hero p {
+    animation-delay: 1.5s;
+}
+
+.hero .subscribe-form {
+    animation-delay: 2s;
+}
+
+/* Introduction Section */
+.introduction {
+    background: linear-gradient(to bottom, #2b1108, #3d1f0e, #4e1b0a); /* Deep amber-brown gradient */
+    color: #f4f4f2; /* Soft off-white text for readability */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.introduction .intro-quote {
+    font-family: 'Dancing Script', cursive; /* Flowing, script-like font for the quote */
+    font-size: 2rem; /* Larger text for emphasis */
+    color: #ff9e66; /* Amber-red for contrast */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow for readability */
+}
+
+.introduction .intro-text {
+    font-family: 'Cormorant Garamond', serif; /* Elegant serif font */
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #e3a87c; /* Muted amber-red for text */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Subtle shadow for readability */
+}
+
+.introduction p {
+    margin-bottom: 20px;
+}
+
+.introduction p strong {
+    color: #ffbe76; /* Highlighted amber-gold for "Amber Queen" */
+}
+
+/* Posts Section */
+.posts {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between posts */
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #4e1b0a, #320f07, #1b0503); /* Rich red-brown gradient */
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+}
+
+/* Individual Post Cards */
+.post {
+    text-align: center;
+    background-color: rgba(60, 20, 15, 0.85); /* Transparent red-brown */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Deep shadow for a mysterious feel */
+    padding: 20px;
+    width: 250px;
+    color: #f9c7aa; /* Soft amber-pink text color */
+    backdrop-filter: blur(3px); /* Glassy underwater effect */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-10px) scale(1.05); /* Floating hover effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.9); /* Slightly darker shadow */
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); /* Shadow for image depth */
+}
+
+.post h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: #ff9e66; /* Vibrant amber-red for titles */
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Shadow for readability */
+}
+
+.post p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #e88b6a; /* Muted amber-red for descriptions */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .posts {
+        flex-direction: column; /* Stack posts vertically */
+        align-items: center; /* Center-align the stacked posts */
+    }
+
+    .post {
+        width: 90%; /* Make the posts take up most of the screen width */
+        margin-bottom: 20px; /* Add space between stacked posts */
+    }
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 50px 20px;
+    background: url('images/Amber Queen Sea.webp') center/cover no-repeat;
+    background-attachment: fixed; /* Enables parallax effect */
+    position: relative;
+    text-align: left; /* Align text to the left */
+    color: #f4f4f2;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    z-index: 1;
+}
+
+.contact-section * {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+.contact-text {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    font-family: 'Cormorant Garamond', serif; /* Elegant serif font */
+    font-size: 1.1rem;
+    color: #f4f4f2; /* Soft beige/white for better readability */
+    line-height: 1.8;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form button {
+    background-color: #d9a760;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: #b68650;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Make Posts Section Stack Vertically */
+    .posts {
+        flex-direction: column; /* Stack posts vertically */
+        align-items: center; /* Center-align the stacked posts */
+    }
+
+    .post {
+        width: 90%; /* Make posts take up most of the screen width */
+        margin-bottom: 20px; /* Add space between stacked posts */
+    }
+
+    /* Adjust Contact Section for Smaller Screens */
+    .contact-section {
+        padding: 30px 15px; /* Reduce padding for smaller screens */
+    }
+
+    .contact-text {
+        font-size: 0.9rem; /* Slightly smaller text for better fit */
+    }
+
+    .contact-form {
+        gap: 10px; /* Less gap between form fields */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem; /* Slightly smaller inputs for mobile */
+    }
+
+    .contact-form button {
+        font-size: 1rem; /* Adjust button size */
+    }
+}
+
+/* Book Quote */
+.book-quote {
+    font-family: 'Dancing Script', cursive; /* A flowing, script-like font */
+    font-size: 2rem; /* Larger text for emphasis */
+    color: #f7d560; /* Soft golden color for contrast */
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Add shadow for readability */
+}
